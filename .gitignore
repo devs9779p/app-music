@@ -1,0 +1,13 @@
+# Archivo de configuracion
+.env
+
+# Archivos de uploads
+*.png
+*.jpg
+*.gif
+*.mp3
+*.ogg
+
+# Modulos de Node
+/api/node_modules/
+/client/node_modules/

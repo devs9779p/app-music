@@ -85,7 +85,7 @@ export class AppComponent implements OnInit{
     this.authService.signOut();
   }
 
-  // ------------------------- Login -----------------------------
+  // ------------------------- Login de la app -----------------------------
   public onSubmit(){
     this._userService.signup(this.user).subscribe(
       response => {

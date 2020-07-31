@@ -1,9 +1,9 @@
 <!-- +++++++++++++++++++++++++++ MOSTRAR SI TIENE ACCESO ADMIN ++++++++++++++++++++++++++++++++-->
-<div class="col-lg-6" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
-    <h1>{{title}}</h1>
+<div class="artist-add__container col-xs-12 col-lg-6" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+    <h1 class="artist-add__title">{{title}}</h1>
 
     <div *ngIf="alertMessage">
-        <div class="alert alert-info">
+        <div class="alert alert-success">
         {{alertMessage}}
         </div>
     </div>
@@ -21,11 +21,11 @@
             <label>Descripción</label>
             <textarea #description="ngModel" name="description" [(ngModel)]="artist.description" required class="form-control"></textarea>
             <span *ngIf="!description.valid && description.touched">
-                La descriptción es obligatoria
+                La descripción es obligatoria
             </span>
         </p>
 
-        <div *ngIf="is_edit">   <!-- Si llega a existir 'is_edit' se va a mostrar todo este campo -->
+        <div *ngIf="is_edit">
             <div class="artist_image_for_edit" *ngIf="artist.image && artist.image != 'null'">
                 <img src="{{url + 'get-image-artist/' + artist.image }}">
             </div>
@@ -35,7 +35,7 @@
             </p>
         </div>
 
-        <input type="submit" value="{{title}}" [disabled]="!formArtist.form.valid" class="btn btn-success"> <!-- Si el formulario no es valido, que sea disable-->
+        <input type="submit" value="{{title}}" [disabled]="!formArtist.form.valid" class="btn btn-default artist__btn-submit">
         
     </form>
 </div>

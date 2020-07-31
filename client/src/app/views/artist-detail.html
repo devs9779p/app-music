@@ -7,8 +7,9 @@
 
         <div class="data">
             <h1>{{artist.name}}</h1>
-            <p class="description">{{artist.description}}</p>
-
+            <hr>
+            <p>{{artist.description}}</p>
+            <hr>
             <a *ngIf="identity.role == 'ROLE_ADMIN'" [routerLink]="['/crear-album', artist._id]" class="btn btn-default">Añadir album</a>
         </div>
     </div>
@@ -17,8 +18,8 @@
     
     <div id="gallery-albums" *ngIf="albums">
         <!-- Listar los albums-->
-        <ul class="album-list">
-            <li *ngFor="let album of albums" class="col-lg-4 album-item">
+        <ul class="album-list col-xs-12">
+            <li *ngFor="let album of albums" class="col-xs-6 album-item">
 
                 <div class="album-image">
                     <img src="{{ url + 'get-image-album/' + album.image }}">
@@ -37,19 +38,19 @@
                     </p>
 
                     <div class="buttons" *ngIf="identity.role == 'ROLE_ADMIN'">
-                        <a [routerLink]="['/editar-album', album._id]" class="btn btn-sm btn-warning">
+                        <a [routerLink]="['/editar-album', album._id]" class="btn btn-xs btn-warning text-white">
                             Editar
                         </a>
-                        <a (click)="onDeleteConfirm(album._id)" class="btn btn-sm btn-danger">
+                        <a (click)="onDeleteConfirm(album._id)" class="btn btn-xs btn-danger text-white">
                             Borrar
                         </a>
                     </div>
         
-                    <div class="seguro-album" *ngIf="confirmado == album._id">
-                        <a (click)="onDeleteAlbum(album._id)" class="btn btn-sm btn-danger">
+                    <div class="seguro seguro-album" *ngIf="confirmado == album._id">
+                        <a (click)="onDeleteAlbum(album._id)" class="btn btn-xs btn-danger text-white">
                             Eliminar
                         </a>
-                        <a (click)="onCancelAlbum()" class="btn btn-sm btn-primary">
+                        <a (click)="onCancelAlbum()" class="btn btn-xs btn-primary text-white">
                             Cancelar
                         </a>
                     </div>

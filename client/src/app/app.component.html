@@ -1,53 +1,48 @@
      
 <!-- ************************** CONTENEDOR CUANDO ESTOY LOGUEADO ******************************** -->
-<div *ngIf="identity" class="navigation col-lg-1">        
-  <h1 class="head-title">
-    <a [routerLink]="['/']">
-      <span class="glyphicon glyphicon-music" aria-hidden="true" ></span>
-      {{title}}
-    </a>
-  </h1>
+<div *ngIf="identity" class="navigation col-xs-12">        
+
+  <!-- **********************  OPCIONES DE USUARIO YA IDENTIFICADO ***************************** -->
+  
+  
+  <!-- Acá se carga el reproductor -->
+  <player class="player" *ngIf="identity"></player>
 
   <!-- *************************  MENÚ PRINCIPAL DE NAVEGACIÓN ************************************* -->
   <nav id="navigation">
-    
+
+    <a [routerLink]="['/']">
+      <img src="../assets/images/mezzopiano.svg" alt="logo">
+      <!-- {{title}} -->
+    </a>
+
     <a href="#">
-      <span class="glyphicon glyphicon-search" aria-hidden="true" ></span>
-      Buscar
+      buscar
     </a>
 
     <a [routerLink]="['/artistas', 1]" [routerLinkActive]="['actived']">
-      <span class="glyphicon glyphicon-star" aria-hidden="true" ></span>
       Artistas
     </a>
 
-    <a href="#">
-      <span class="glyphicon glyphicon-book" aria-hidden="true" ></span>
-      Albums
-    </a>
-
-  </nav>
-
-  <!-- **********************  OPCIONES DE USUARIO YA IDENTIFICADO ***************************** -->
-  <nav id="user_logged">
-
-    <div class="user-image">
-      <img id="image-logged" src="{{url + 'get-image-user/' + identity.image}}"/>
-    </div>
-
-    <span id="identity_name">
-      {{identity.name}}
-    </span>
-
     <a [routerLink]="['./mis-datos']" [routerLinkActive]="['actived']" >    <!-- routerLink es una directiva para indicar a donde quiero que me lleve el link -->
-      <span class="glyphicon glyphicon-cog" aria-hidden="true" ></span>
-      Mis datos
+      datos
     </a>
 
     <a (click)="logout()" class="btn-logout">    
-      <span class="glyphicon glyphicon-log-out" aria-hidden="true" ></span>
       Salir
     </a>
+
+    <nav id="user_logged">
+
+      <div class="user-image">
+        <img id="image-logged" src="{{url + 'get-image-user/' + identity.image}}" />
+      </div>
+  
+      <span id="identity_name">
+        {{identity.name}}
+      </span>
+  
+    </nav>
 
   </nav>
 
@@ -61,15 +56,13 @@
 
   <div class="clearfix"></div>
 
-  <!-- Acá se carga el reproductor -->
-  <player class="player" *ngIf="identity"></player>
 
 </div>
 
 <!-- **************************************** Contenedor cuando NO ESTOY LOGUEADO ***********************************************-->  
-<div class="col-lg-11" *ngIf="!identity">
+<div class="container__login-register col-xs-12" *ngIf="!identity">
   <div class="row">
-    <div class="col-lg-6">
+    <div class=" login__container col-xs-12">
 
       <h1>Login</h1>          
 
@@ -79,7 +72,7 @@
         </div>        
       </div>
 
-      <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="col-md-6">   
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="col-xs-12 login__form">   
         <p>
           <label>Correo electrónico:</label>
           <input type="email" #email="ngModel" name="email" [(ngModel)]="user.email" class="form-control"  placeholder="Ingrese email" required> 
@@ -93,13 +86,13 @@
           <input type="password" #password="ngModel" name="password" [(ngModel)]="user.password" class="form-control" placeholder="Ingrese constraseña" required>
         </p>
         
-        <input type="submit" value="Entrar" class="btn btn-primary">
+        <input type="submit" value="Entrar" class="btn btn-default">
       </form>
     </div>
 
     <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++ REGISTRO DE USUARIO ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
-    <div class="col-lg-6">
+    <div class="col-xs-12 register__container">
       <h1>Registrarse</h1>
       <div *ngIf="alertRegister">
         <div class="alert alert-success">
@@ -107,10 +100,10 @@
         </div>
       </div>
 
-      <form #registerForm="ngForm" (submit)="onSubmitRegister()" class="col-md-8">
+      <form #registerForm="ngForm" (submit)="onSubmitRegister()" class="col-xs-12 register__form">
         <p>
           <label>Nombre:</label>
-          <input type="text" #name="ngModel" name="name" [(ngModel)]="user_register.name" class="form-control" required>
+          <input type="text" #name="ngModel" name="name" [(ngModel)]="user_register.name" class="form-control"  placeholder="Ingrese nombre" required>
           <span *ngIf="!name.valid && name.touched"> 
             El nombre es obligatorio
           </span>
@@ -118,7 +111,7 @@
 
         <p>
           <label>Apellidos:</label>
-          <input type="text" #surname="ngModel" name="surname" [(ngModel)]="user_register.surname" class="form-control" required>
+          <input type="text" #surname="ngModel" name="surname" [(ngModel)]="user_register.surname" class="form-control"  placeholder="Ingrese apellido" required>
           <span *ngIf="!surname.valid && surname.touched"> 
             El Apellido es obligatorio
           </span>
@@ -126,7 +119,7 @@
 
         <p>
           <label>Correo electrónico:</label>
-          <input type="text" #email="ngModel" name="email" [(ngModel)]="user_register.email" class="form-control" required>
+          <input type="text" #email="ngModel" name="email" [(ngModel)]="user_register.email" class="form-control"  placeholder="Ingrese email" required>
           <span *ngIf="!email.valid && email.touched">  
             El email es obligatorio
           </span>
@@ -134,19 +127,18 @@
 
         <p>
           <label>Contraseña:</label>
-          <input type="password" #password="ngModel" name="password" [(ngModel)]="user_register.password" class="form-control" required>
+          <input type="password" #password="ngModel" name="password" [(ngModel)]="user_register.password" class="form-control"  placeholder="Ingrese contraseña" required>
           <span *ngIf="!password.valid && password.touched">  
             La Contraseña es obligatoria
           </span>
         </p>
 
-        <input type="submit" value="Registrarse" class="btn btn-primary">
+        <input type="submit" value="Registrarse" class="btn btn-default">
       </form>
 
     </div>
   </div>
 </div>
-
 
   
 

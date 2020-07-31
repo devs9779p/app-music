@@ -1,0 +1,48 @@
+div.home__main-container{
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 80%;
+    .home__container{
+        text-align:center;
+        .home__title{
+            font-size: 3.7rem;
+            span{
+                font-size: 5.3rem;
+                font-weight: 600;
+            }
+        }
+        .home__text{
+            font-size: 1.4rem;
+        }
+        a.home__btn{
+            border: 2px solid #fff;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            transition: all 400ms;
+            margin-top: 3%;
+            padding: .9em;       
+            &:active, &:hover{
+                background-color: #000000ad;
+                color: #fff;
+            }
+        }
+    }
+}
+
+// @media screen and (min-width: 768px){
+//     div.home__main-container .home__container .home__title{
+//         font-size: 4.3em;
+//     }
+//     div.home__main-container .home__container .home__text{
+//         font-size: 1.6em;
+//         font-weight: 600;   
+//     }
+//     div.home__main-container .home__container a.home__btn{
+//         font-size: 1.5em;
+//     }
+// }

@@ -6,36 +6,38 @@
     </a>
 
     <ul class="pagination pull-right">
-        <li><a [routerLink]="['/artistas', prev_page]">&laquo;</a></li>
-        <li><a [routerLink]="['/artistas', next_page]">&raquo;</a></li>
+        <li><a class="pagination__arrow" [routerLink]="['/artistas', prev_page]">&laquo;</a></li>
+        <li><a class="pagination__arrow" [routerLink]="['/artistas', next_page]">&raquo;</a></li>
     </ul>
 
 </div>
 
 <div class="clearfix"></div>
-<ul class="artist-list" *ngIf="identity">
-    <li *ngFor="let artist of artists" class="col-lg-3 artist-item">
+<ul class="artist-list col-xs-12" *ngIf="identity">
+    <li *ngFor="let artist of artists" class="col-xs-6 artist-item">
 
         <div class="artist-image">
             <img src="{{ url + 'get-image-artist/' + artist.image }}">
         </div>
 
         <div class="artist-name">
-            <a [routerLink]="['/artista', artist._id]">
+            <a class="artist-name--link" [routerLink]="['/artista', artist._id]">
                 {{artist.name}}
             </a>
             <div class="buttons" *ngIf="identity.role == 'ROLE_ADMIN'">
-                <a [routerLink]="['/editar-artista', artist._id]" class="btn btn-sm btn-warning">Editar</a>
-                <a (click)="onDeleteConfirm(artist._id)" class="btn btn-sm btn-danger">
+                <a [routerLink]="['/editar-artista', artist._id]" class="btn btn-xs btn-warning">
+                    Editar
+                </a>
+                <a (click)="onDeleteConfirm(artist._id)" class="btn btn-xs btn-danger">
                     Borrar
                 </a>
             </div>
 
-            <div class="seguro" *ngIf="confirmado == artist._id">
-                <a (click)="onDeleteArtist(artist._id)" class="btn btn-sm btn-danger">
+            <div class="seguro seguro-artist-card" *ngIf="confirmado == artist._id">
+                <a (click)="onDeleteArtist(artist._id)" class="btn btn-xs btn-danger">
                     Eliminar
                 </a>
-                <a (click)="onCancelArtist()" class="btn btn-sm btn-primary">
+                <a (click)="onCancelArtist()" class="btn btn-xs btn-primary">
                     Cancelar
                 </a>
             </div>

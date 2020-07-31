@@ -1,0 +1,60 @@
+div.user-edit__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8%;
+    margin-bottom: 54%;
+    .user-edit__title{
+        font-size: 2.3rem;
+        text-align: center;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 14%;
+    }
+    form{
+        margin: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15%;
+        p{
+            width: 90%;
+            label{
+                font-weight: 500;
+                color: #ffffff;
+                font-size: 1.4rem;
+            }
+            span{
+                font-size: 1.4rem;
+                color: #db2525; 
+            }
+        }
+        .image_for_edit{
+            width: 16vw;
+            height: 16vw;
+            object-fit: cover;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .user-edit__add-img{
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            input{
+                font-size: 1.1rem;
+            }
+        }
+        .user-edit__btn-submit{
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            transition: all 400ms;
+            margin-top: 9%;
+            color: #000000ad;
+            padding: 1.1em;
+        }
+    }
+}

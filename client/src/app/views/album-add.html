@@ -1,8 +1,8 @@
-<div class="col-lg-6" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
-    <h1>{{titulo}}</h1>
+<div class="album-add__container col-xs-12" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+    <h1 class="album-add__title">{{titulo}}</h1>
 
     <div *ngIf="alertMessage">
-        <div class="alert alert-info">
+        <div class="alert alert-success">
         {{alertMessage}}
         </div>
     </div>
@@ -20,7 +20,7 @@
             <label>Descripción</label>
             <textarea #description="ngModel" name="description" [(ngModel)]="album.description" required class="form-control"></textarea>
             <span *ngIf="!description.valid && description.touched">
-                La descriptción es obligatoria
+                La descripción es obligatoria
             </span>
         </p>
         <p>
@@ -36,13 +36,13 @@
             <div class="album_image_for_edit" *ngIf="album.image && album.image != 'null'">
                 <img src="{{url + 'get-image-album/' + album.image }}">
             </div>
-            <p>
+            <p class="album-add__add-img">
                 <label>Sube la imagen del album</label>
                 <input type="file" placeholder="Subir imagen..." (change)="fileChangeEvent($event)">
             </p>
         </div>
     
-        <input type="submit" value="{{titulo}}" [disabled]="!formAlbum.form.valid" class="btn btn-success">
+        <input type="submit" value="{{titulo}}" [disabled]="!formAlbum.form.valid" class="btn btn-default album__btn-submit">
     
     </form>   
 </div>

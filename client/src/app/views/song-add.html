@@ -1,8 +1,8 @@
-<div class="col-lg-6" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+<div class="song-add__container col-xs-12" *ngIf="identity && identity.role == 'ROLE_ADMIN'">
     <h1>{{titulo}}</h1>
 
     <div *ngIf="alertMessage">
-        <div class="alert alert-info">
+        <div class="alert alert-success">
         {{alertMessage}}
         </div>
     </div>
@@ -32,20 +32,20 @@
             </span>
         </p>
 
-        <div *ngIf="is_edit">   <!-- Si llega a existir 'is_edit' se va a mostrar todo este campo -->
+        <div class="song-box" *ngIf="is_edit">   <!-- Si llega a existir 'is_edit' se va a mostrar todo este campo -->
             <div class="song_file_for_edit" *ngIf="song.file && song.file != 'null'">
                 <audio controls>
                     <source src="{{ url + 'get-file-song/' + song.file}}" type="audio/mpeg">
                         El navegador web no soporta la reproducción de audio
                 </audio>
             </div>
-            <p>
+            <p class="song-add__select-audio">
                 <label>Sube el archivo de audio</label>
                 <input type="file" placeholder="Subir archivo..." (change)="fileChangeEvent($event)">
             </p>
         </div>
 
-        <input type="submit" value="{{titulo}}" [disabled]="!formSong.form.valid" class="btn btn-success">
+        <input type="submit" value="{{titulo}}" [disabled]="!formSong.form.valid" class="btn btn-default song-add__btn-submit">
 
     </form>
 </div>

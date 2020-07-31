@@ -1,0 +1,122 @@
+.head-page{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        font-size: 2.3rem;
+        color: #fff;
+        font-weight: 600;
+        margin-top: 15%;
+    }
+    .btn{
+        color: #000000ad;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        transition: all 400ms;
+        margin-top: 2%;
+        padding: 1.1em;
+        // &:active{
+        //     background-color: #000000ad;
+        //     color: #fff;
+        // }
+        &:before{
+            content: ' \002B'; 
+            font-weight: 900;
+        }
+    }
+    .pagination{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 3%;
+        .pagination__arrow{
+            color: #000000;
+            font-weight: 600;
+            border: none;
+            background-color: #147588;
+            font-size: 1.7rem;
+            padding: 0.6em 1em 0.6em 1em;
+            &focus, &hover{
+                color: #3f3e3ecf !important; /*sustituye propiedad bootrstrap*/
+            }
+        }
+    }
+}
+ul.artist-list{
+    list-style: none;
+    padding: 1%;
+    height: 100%;
+    margin-bottom: 27%;
+    .artist-item{
+        width: 50%;
+        margin: 0;
+        padding: 0;
+        height: auto;
+        text-align: center;
+        margin-bottom: 12%;
+        .artist-image{
+            box-shadow: 0px 0px 8px #000000;
+            margin-bottom: 8%;
+            object-fit: cover;
+            width: 43vw;
+            height: 43vw;
+            img{
+                height: 100%;
+                width: 100%;
+            }
+        }
+        .artist-name{
+            color: #000000cf;
+            padding-bottom: 7%;
+            padding-left: 1%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            .artist-name--link{
+                padding: 1.1em;
+            }
+            a{
+                color: #fff;
+                font-size: 1.5rem;
+                padding: .8em .5em .8em .5em;
+            }
+            .buttons{
+                margin-top: 15%;
+                display: flex;
+                justify-content: space-around;
+            }
+            .seguro-artist-card{
+                margin-top: -35%;
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-items: center;
+                a{
+                    font-size: 1.4rem;
+                    padding: 0.9em 0.3em 0.9em 0.3em;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 576px){
+    .head-page h1{
+        font-size: 2.3em;
+    }
+    .head-page .btn{
+        font-size: 1.5em;
+    }
+    .head-page .pagination{
+        padding: 0 5% 0 5%;
+        .pagination__arrow{
+            font-size: 2.3em;
+        }
+    }
+    ul.artist-list .artist-item .artist-name a{
+        font-size: 1.7em;
+    }
+}

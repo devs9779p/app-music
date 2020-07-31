@@ -21,12 +21,13 @@ export class ArtistListComponent implements OnInit{
     public next_page;
     public prev_page;
     public confirmado;
+    // public loading: boolean;
     
     constructor(
         private _route: ActivatedRoute,
         private _router: Router,
         private _userService: UserService,
-        private _artistService: ArtistService
+        private _artistService: ArtistService,
     ){
         this.title = 'Artistas';
         this.identity = this._userService.getIdentity();
@@ -34,11 +35,12 @@ export class ArtistListComponent implements OnInit{
         this.url = GLOBAL.url;
         this.next_page = 1;
         this.prev_page = 1;
+        // this.loading = true;
     }
 
     ngOnInit(){
         console.log('artist-list.component.ts cargado correctamente');
-        this.getArtists();
+        this.getArtists(); 
     }
     
     // +++++++++++++++++++++++++++++++++++++++ MOSTRAR ARRAY DE ARTISTAS +++++++++++++++++++++++++++++++++++++++++
@@ -61,7 +63,8 @@ export class ArtistListComponent implements OnInit{
                     if (!response.artists) {
                         this._router.navigate(['/']);
                     } else {
-                        this.artists = response.artists;        
+                        // this.loading = false;
+                        this.artists = response.artists;                  
                         console.log(this.artists);
                     }
                 },

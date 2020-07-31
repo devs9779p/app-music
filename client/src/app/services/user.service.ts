@@ -11,9 +11,9 @@ export class UserService{
     public url: string;
     public identity;
     public token;
-                           
+                         
     constructor(private _http: Http){           
-        this.url = GLOBAL.url;                  
+        this.url = GLOBAL.url;
     }
 
     // +++++++++++++++++++++++++++++++++++++++++++++  METODO PARA LOGUEARSE  +++++++++++++++++++++++++++++++++++++++++++++++
@@ -27,7 +27,6 @@ export class UserService{
         let headers = new Headers({'Content-Type': 'application/json'});  
 
         return this._http.post(this.url + 'login', params, { headers: headers }).map(res => res.json());
-
     }
 
     // ++++++++++++++++++++++++++++++++++++++++++ METODO PARA REGISTRARSE +++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -61,7 +60,7 @@ export class UserService{
             this.identity = null;
         }
         return this.identity;
-    };
+    }
 
     getToken(){
         let token = localStorage.getItem('token');

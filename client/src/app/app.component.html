@@ -1,5 +1,6 @@
      
-<!-- ************************** CONTENEDOR CUANDO ESTOY LOGUEADO ******************************** -->
+<!-- ///////////////////////////////////////// CONTENEDOR DE USUARIO LOGUEADO ///////////////////////////////////////////// -->
+
 <div *ngIf="identity" class="navigation col-lg-1">        
   <h1 class="head-title">
     <a [routerLink]="['/']">
@@ -8,8 +9,8 @@
     </a>
   </h1>
 
-  <!-- *************************  MENÚ PRINCIPAL DE NAVEGACIÓN ************************************* -->
-  <nav id="navigation">
+  <!----------------------------  Menú principal de navegación ------------------------------->
+  <nav id="navigation" *ngIf="identity">
     
     <a href="#">
       <span class="glyphicon glyphicon-search" aria-hidden="true" ></span>
@@ -23,13 +24,15 @@
 
     <a href="#">
       <span class="glyphicon glyphicon-book" aria-hidden="true" ></span>
-      Albums
+      Albums 
     </a>
+    
 
   </nav>
 
-  <!-- **********************  OPCIONES DE USUARIO YA IDENTIFICADO ***************************** -->
-  <nav id="user_logged">
+  <!------------------------ Opciones de usuario identificado en la barra  -------------------------->
+
+  <nav id="user_logged" *ngIf="identity">
 
     <div class="user-image">
       <img id="image-logged" src="{{url + 'get-image-user/' + identity.image}}"/>
@@ -38,7 +41,7 @@
     <span id="identity_name">
       {{identity.name}}
     </span>
-
+    
     <a [routerLink]="['./mis-datos']" [routerLinkActive]="['actived']" >    <!-- routerLink es una directiva para indicar a donde quiero que me lleve el link -->
       <span class="glyphicon glyphicon-cog" aria-hidden="true" ></span>
       Mis datos
@@ -48,26 +51,28 @@
       <span class="glyphicon glyphicon-log-out" aria-hidden="true" ></span>
       Salir
     </a>
-
+    
   </nav>
-
 </div>
 
 
-<div [class.hidden]="!identity" class="central col-lg-11">  <!-- ng class si no está identity que se esconda-->       
+<div [class.hidden]="!identity && !userSocial" class="central col-lg-11">  <!-- ng class si no está identity que se esconda-->       
   
-  <!-- Acá se cargar los componentes ASOSIADOS al PATH DE CADA RUTA ************************** -->
+  <!-- Acá se cargar los componentes asociados al path de cada ruta -->
   <router-outlet></router-outlet>  
 
   <div class="clearfix"></div>
 
-  <!-- Acá se carga el reproductor -->
+  <!--------------------------- Acá se carga el reproductor --------------------------->
   <player class="player" *ngIf="identity"></player>
 
 </div>
 
-<!-- **************************************** Contenedor cuando NO ESTOY LOGUEADO ***********************************************-->  
-<div class="col-lg-11" *ngIf="!identity">
+<!-- ///////////////////////////////////////////// CONTENEDOR DE USUARIO NO LOGUEADO ///////////////////////////////////////////// -->  
+
+<!---------------------- loguin de usuario ------------------------->
+
+<div class="col-lg-11" *ngIf="!identity && !userSocial">
   <div class="row">
     <div class="col-lg-6">
 
@@ -95,9 +100,22 @@
         
         <input type="submit" value="Entrar" class="btn btn-primary">
       </form>
+
+      <!-- Inicio de sesión con redes sociales -->
+      <div class="social-login">
+        <p>Iniciar Sesion con Google o Facebook</p>
+        <button class="btn btn-danger" (click)="signInWithGoogle()">
+          Iniciar con Google
+        </button>
+        <button class="btn btn-primary" (click)="signInWithFB()">
+          Iniciar con Facebook
+        </button>
+      </div>
+
     </div>
 
-    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++ REGISTRO DE USUARIO ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <!---------------------------- Registro de usuario ------------------------------->
 
     <div class="col-lg-6">
       <h1>Registrarse</h1>

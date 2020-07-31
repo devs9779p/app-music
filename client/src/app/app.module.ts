@@ -29,6 +29,29 @@ import { SongEditComponent } from './components/song-edit.component';
 // Player
 import { PlayerComponent } from './components/player.component';
 
+// Social-login
+import {
+  SocialLoginModule, 
+  AuthServiceConfig,
+  GoogleLoginProvider, 
+  FacebookLoginProvider, 
+} from 'ng4-social-login';
+ 
+const CONFIG = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider("501850352230-qfsoloe4joj9kp8pquh57ask0fss6hvv.apps.googleusercontent.com")
+  },
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider('659502064648605')
+  }
+], false);
+ 
+export function provideConfig() {
+  return CONFIG;
+}
+
 @NgModule({
   declarations: [         
     AppComponent,
@@ -43,15 +66,22 @@ import { PlayerComponent } from './components/player.component';
     AlbumDetailComponent,
     SongAddComponent,
     SongEditComponent,
-    PlayerComponent
+    PlayerComponent,
   ],
   imports: [               
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    SocialLoginModule
   ],
-  providers: [appRoutingProviders],            
+  providers: [
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+    },
+    appRoutingProviders
+  ],            
   bootstrap: [AppComponent]                     
 })
 

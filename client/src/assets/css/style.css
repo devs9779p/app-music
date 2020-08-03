@@ -290,6 +290,19 @@ div.container__login-register .row .login__container h1 {
   font-weight: 700;
   margin-bottom: 8%;
 }
+div.container__login-register .row .login__container .social-login {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin: 4% 0 7% 0;
+}
+div.container__login-register .row .login__container .social-login .btn {
+  width: 90%;
+}
+div.container__login-register .row .login__container .social-login .btn-danger {
+  margin-bottom: 4%;
+}
 div.container__login-register .row .login__container .login__form {
   display: flex;
   flex-direction: column;
@@ -597,37 +610,12 @@ ul.artist-list .artist-item .artist-name .seguro-artist-card a {
   padding: 0.9em 0.3em 0.9em 0.3em;
 }
 
-@media screen and (min-width: 576px) {
-  .head-page h1 {
-    font-size: 2.3em;
-  }
-
-  .head-page .btn {
-    font-size: 1.5em;
-  }
-
-  .head-page .pagination {
-    padding: 0 5% 0 5%;
-  }
-  .head-page .pagination .pagination__arrow {
-    font-size: 2.3em;
-  }
-
-  ul.artist-list .artist-item .artist-name a {
-    font-size: 1.7em;
-  }
-}
 html, body {
   margin: 0;
   height: 100%;
   color: #ffffff;
 }
 
-@media screen and (min-width: 600px) {
-  html {
-    font-size: 120%;
-  }
-}
 a:focus {
   outline: 1px auto #000000ad;
   outline-offset: -2px;
@@ -778,15 +766,6 @@ div.home__main-container .home__container a.home__btn:active, div.home__main-con
   height: 80%;
 }
 
-@media screen and (min-width: 576px) {
-  .player .audio-file {
-    font-size: 1.33em;
-  }
-
-  .player .player-box #player {
-    height: 29px;
-  }
-}
 .song-add__container {
   height: auto;
   margin-top: 8%;

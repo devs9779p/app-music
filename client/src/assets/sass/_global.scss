@@ -2,15 +2,6 @@ html, body{
     margin: 0;
     height: 100%;
     color: #ffffff;
-//     background-color: rgba(0,0,0,1);
-//     filter-gradient(#000000, #000000, horizontal);
-// background: background-image(linear-gradient(left bottom, rgba(0,0,0,1) 0%, rgba(50,126,149,1) 50%, rgba(0,0,0,1) 100%));
-}
-
-@media screen and (min-width: 600px){
-    html{
-        font-size: 120%;
-    }
 }
 
 a:focus{
@@ -38,7 +29,6 @@ a:focus, a:hover{
 
 .alert-info{
     font-size: 1.2rem;
-    // padding: 3%;
     text-align: center;
     background-color: transparent;
     color: #6eb610de;
@@ -48,7 +38,6 @@ a:focus, a:hover{
 
 .alert-success{
     font-size: 1.2rem;
-    // padding: 2%;
     margin: 0;
 }
 
@@ -62,9 +51,7 @@ a:focus, a:hover{
 }
 
 
-
-
-    /*CARGANDO WEB MENSAJE LOADING*/
+/*CARGANDO WEB MENSAJE LOADING*/
 .loading{
     font-size: 1.4rem;
     text-transform: uppercase;

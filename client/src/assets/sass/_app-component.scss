@@ -55,17 +55,6 @@ div.navigation{
     }
 }
 
-// @media screen and (min-width: 576px){
-//     div.navigation #navigation a{
-//         font-size: 1.4em;
-//         img{
-//             width: 8vw;
-//             height: 8vw;
-//         }
-//     }
-// }
-
-
 div.central{
     width: 100%;
     overflow: hidden;
@@ -105,6 +94,19 @@ div.container__login-register{
         h1{
             font-weight: 700;
             margin-bottom: 8%;
+        }
+        .social-login{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            margin: 4% 0 7% 0;
+            .btn{
+                width: 90%;
+            }
+            .btn-danger{
+                margin-bottom: 4%;
+            }
         }
         .login__form{
             display: flex;

@@ -19,7 +19,7 @@
     <div id="gallery-albums" *ngIf="albums">
         <!-- Listar los albums-->
         <ul class="album-list col-xs-12">
-            <li *ngFor="let album of albums" class="col-xs-6 album-item">
+            <li *ngFor="let album of albums" class="col-xs-6 col-xl-3 album-item">
 
                 <div class="album-image">
                     <img src="{{ url + 'get-image-album/' + album.image }}">
@@ -32,7 +32,7 @@
                     </p>
 
                     <p>
-                        <a [routerLink]="['/artista', album.artist._id]">
+                        <a class="album-artist-name" [routerLink]="['/artista', album.artist._id]">
                             {{album.artist.name}}
                         </a>
                     </p>

@@ -2,6 +2,7 @@ html, body{
     margin: 0;
     height: 100%;
     color: #ffffff;
+    background-color: #0f454f !important; //sobrescribe propiedad scaffolding.less:32
 }
 
 a:focus{
@@ -55,13 +56,9 @@ a:focus, a:hover{
 .loading{
     font-size: 1.4rem;
     text-transform: uppercase;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 100vh;
     width: 100%;
-    align-items: center;
     font-weight: 600;
+    color: #ffffff;
 }
 
 

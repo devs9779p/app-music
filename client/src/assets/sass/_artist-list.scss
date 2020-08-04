@@ -8,6 +8,10 @@
         color: #fff;
         font-weight: 600;
         margin-top: 15%;
+
+        @media only screen and (min-width: 1200px){
+            margin-top: 4%;
+        }
     }
     .btn{
         color: #000000ad;
@@ -29,14 +33,16 @@
         justify-content: space-between;
         margin-top: 3%;
         .pagination__arrow{
-            color: #000000;
+            color: #ffffff;
             font-weight: 600;
             border: none;
             background-color: #147588;
             font-size: 1.7rem;
             padding: 0.6em 1em 0.6em 1em;
-            &focus, &hover{
-                color: #3f3e3ecf !important; /*sustituye propiedad bootrstrap*/
+            transition: all 300ms;
+            &:hover{
+                color: #000000 !important; /*sustituye propiedad bootrstrap*/
+                background-color: #0f454f;
             }
         }
     }
@@ -46,6 +52,11 @@ ul.artist-list{
     padding: 1%;
     height: 100%;
     margin-bottom: 27%;
+
+    @media only screen and (min-width: 1200px){
+        margin-bottom: 0;
+    }
+
     .artist-item{
         width: 50%;
         margin: 0;
@@ -53,12 +64,25 @@ ul.artist-list{
         height: auto;
         text-align: center;
         margin-bottom: 12%;
+
+        @media only screen and (min-width: 1200px){
+            width: 100%;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+        }
         .artist-image{
             box-shadow: 0px 0px 8px #000000;
             margin-bottom: 8%;
             object-fit: cover;
             width: 43vw;
             height: 43vw;
+            @media only screen and (min-width: 1200px){
+                width: 20vw;
+                height: 20vw;
+                align-self: center;
+            }
+            
             img{
                 height: 100%;
                 width: 100%;
@@ -83,6 +107,10 @@ ul.artist-list{
                 margin-top: 15%;
                 display: flex;
                 justify-content: space-around;
+
+                @media only screen and (min-width: 1200px){
+                    margin: 15% 10% 0 10%;
+                }
             }
             .seguro-artist-card{
                 margin-top: -35%;
@@ -90,6 +118,11 @@ ul.artist-list{
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 justify-items: center;
+
+                @media only screen and (min-width: 1200px){
+                    margin: -30% 0 0 6%;
+                    width: 85%;
+                }
                 a{
                     font-size: 1.4rem;
                     padding: 0.9em 0.3em 0.9em 0.3em;

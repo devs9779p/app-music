@@ -50,7 +50,7 @@
 </div>
 
 
-<div [class.hidden]="!identity && !userSocial" class="central col-lg-11">  <!-- ng class si no está identity que se esconda-->       
+<div [class.hidden]="!identity && !userSocial" class="central col-xl-12">  <!-- ng class si no está identity que se esconda-->       
   
   <!-- Acá se cargan los componentes asociados al path de cada ruta -->
   <router-outlet></router-outlet>  
@@ -63,9 +63,9 @@
 
 <!---------------------- login de usuario ------------------------->
 
-<div class="container__login-register col-xs-12" *ngIf="!identity && !userSocial">
+<div class="container__login-register col-xs-12 col-xl-10" *ngIf="!identity && !userSocial">
   <div class="row">
-    <div class=" login__container col-xs-12">
+    <div class=" login__container col-xs-12 col-xl-6">
 
       <h1>Login</h1>          
 
@@ -109,7 +109,7 @@
 
     <!-- +++++++++++++++++++++++++++++++++ Registro de usuario ++++++++++++++++++++++++++++++++++++++++++-->
 
-    <div class="col-xs-12 register__container">
+    <div class="register__container col-xs-12 col-xl-6 ">
       <h1>Registrarse</h1>
       <div *ngIf="alertRegister">
         <div class="alert alert-success">

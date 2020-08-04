@@ -9,13 +9,16 @@ div.home__main-container{
         text-align:center;
         .home__title{
             font-size: 3.7rem;
+            cursor: default;
             span{
                 font-size: 5.3rem;
                 font-weight: 600;
+                cursor: default;
             }
         }
         .home__text{
             font-size: 1.4rem;
+            cursor: default;
         }
         a.home__btn{
             border: 2px solid #fff;

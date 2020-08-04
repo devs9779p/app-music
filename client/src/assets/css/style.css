@@ -84,7 +84,7 @@
   color: #000000ad;
   padding: 1.2em;
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
   .album-add__container form .album__btn-submit {
     margin-top: 3%;
   }
@@ -103,11 +103,17 @@
   }
 }
 #album-head-card .image {
-  background-color: #ffffff;
+  background-color: #000000;
   box-shadow: 0px 0px 8px #686365;
   object-fit: cover;
   width: 43vw;
   height: 43vw;
+}
+@media only screen and (min-width: 768px) {
+  #album-head-card .image {
+    width: 30vw;
+    height: 30vw;
+  }
 }
 @media only screen and (min-width: 1200px) {
   #album-head-card .image {
@@ -166,10 +172,14 @@
   padding: 4%;
   margin-bottom: 50%;
 }
+@media only screen and (min-width: 768px) {
+  #gallery-songs {
+    margin-bottom: 20%;
+  }
+}
 @media only screen and (min-width: 1200px) {
   #gallery-songs {
     padding: 0 4%;
-    margin-bottom: 15%;
   }
 }
 #gallery-songs #songs-list {
@@ -184,9 +194,13 @@
   list-style: none;
   padding-top: 2%;
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
   #gallery-songs #songs-list .song-item {
     padding: 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #gallery-songs #songs-list .song-item {
     margin-top: 2%;
   }
 }
@@ -194,6 +208,11 @@
   margin-top: 7%;
   overflow: hidden;
   white-space: nowrap;
+}
+@media only screen and (min-width: 768px) {
+  #gallery-songs #songs-list .song-item .title {
+    margin-top: 4%;
+  }
 }
 @media only screen and (min-width: 1200px) {
   #gallery-songs #songs-list .song-item .title {
@@ -239,6 +258,11 @@
   width: 100%;
   margin-top: 7%;
 }
+@media only screen and (min-width: 768px) {
+  #gallery-songs #songs-list .song-item .title .buttons {
+    margin-top: 3%;
+  }
+}
 @media only screen and (min-width: 1200px) {
   #gallery-songs #songs-list .song-item .title .buttons {
     margin-top: 1%;
@@ -258,10 +282,15 @@
   display: flex;
   flex-direction: row;
 }
+@media only screen and (min-width: 768px) {
+  #gallery-songs #songs-list .song-item .title .seguro-song {
+    margin-top: -8%;
+    width: 90%;
+  }
+}
 @media only screen and (min-width: 1200px) {
   #gallery-songs #songs-list .song-item .title .seguro-song {
     margin-top: -5%;
-    width: 90%;
     height: 9%;
   }
 }
@@ -300,6 +329,12 @@ div.navigation #navigation {
   justify-content: space-evenly;
   grid-row: 2/3;
 }
+@media only screen and (min-width: 768px) {
+  div.navigation #navigation {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
 @media only screen and (min-width: 1200px) {
   div.navigation #navigation {
     width: 60%;
@@ -332,6 +367,12 @@ div.navigation #navigation a img {
   width: 9vw;
   height: 9vw;
 }
+@media only screen and (min-width: 768px) {
+  div.navigation #navigation a img {
+    width: 6vw;
+    height: 6vw;
+  }
+}
 @media only screen and (min-width: 1200px) {
   div.navigation #navigation a img {
     width: 4vw;
@@ -340,10 +381,16 @@ div.navigation #navigation a img {
 }
 div.navigation #navigation #user_logged img {
   border-radius: 999px;
-  background-color: #fff;
+  background-color: #000000;
   object-fit: cover;
   width: 9vw;
   height: 9vw;
+}
+@media only screen and (min-width: 768px) {
+  div.navigation #navigation #user_logged img {
+    width: 6vw;
+    height: 6vw;
+  }
 }
 @media only screen and (min-width: 1200px) {
   div.navigation #navigation #user_logged img {
@@ -354,7 +401,7 @@ div.navigation #navigation #user_logged img {
 div.navigation #navigation #user_logged #identity_name {
   display: none;
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
   div.navigation #navigation #user_logged #identity_name {
     display: block;
     font-size: 0.7rem;
@@ -455,9 +502,13 @@ div.container__login-register .row .register__container .register__form input.bt
   margin-bottom: 50%;
   margin-top: 8%;
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
   .artist-add__container {
     margin-bottom: 15%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .artist-add__container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -510,20 +561,23 @@ div.container__login-register .row .register__container .register__form input.bt
   font-size: 1.4rem;
   color: #db2525;
 }
-.artist-add__container form div .artist-add__add-img-title {
-  text-align: center;
-  width: 100%;
-}
-.artist-add__container form div .artist-add__add-img-title input {
-  font-size: 1.1rem;
-  width: 100%;
+.artist-add__container form div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .artist-add__container form div .artist_image_for_edit {
-  text-align: center;
+  object-fit: cover;
+  width: 10vw;
+  height: 10vw;
+  margin-top: 4%;
 }
 .artist-add__container form div .artist_image_for_edit img {
-  width: 50px;
-  height: 50px;
+  width: 100%;
+  height: 100%;
+}
+.artist-add__container form div p {
+  margin-top: 5%;
 }
 .artist-add__container form .artist__btn-submit {
   font-weight: 700;
@@ -534,7 +588,7 @@ div.container__login-register .row .register__container .register__form input.bt
   color: #000000ad;
   padding: 1.2em;
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
   .artist-add__container form .artist__btn-submit {
     margin-top: 4%;
   }
@@ -547,6 +601,11 @@ div.container__login-register .row .register__container .register__form input.bt
   margin-bottom: 10%;
   margin-top: 8%;
   padding: 4%;
+}
+@media only screen and (min-width: 768px) {
+  #artist-head-card {
+    margin-bottom: 5%;
+  }
 }
 @media only screen and (min-width: 1200px) {
   #artist-head-card {
@@ -561,9 +620,15 @@ div.container__login-register .row .register__container .register__form input.bt
   width: 43vw;
   height: 43vw;
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
   #artist-head-card .image {
     margin: 0;
+    width: 30vw;
+    height: 30vw;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #artist-head-card .image {
     width: 20vw;
     height: 20vw;
   }
@@ -609,9 +674,9 @@ div.container__login-register .row .register__container .register__form input.bt
 #gallery-albums {
   margin-bottom: 50%;
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
   #gallery-albums {
-    margin-bottom: 15%;
+    margin-bottom: 20%;
   }
 }
 #gallery-albums .album-list {
@@ -619,6 +684,11 @@ div.container__login-register .row .register__container .register__form input.bt
   list-style: none;
   margin-bottom: 27%;
   padding: 1%;
+}
+@media only screen and (min-width: 768px) {
+  #gallery-albums .album-list {
+    margin-bottom: 0;
+  }
 }
 #gallery-albums .album-list .album-item {
   width: 50%;
@@ -628,7 +698,7 @@ div.container__login-register .row .register__container .register__form input.bt
   text-align: center;
   margin-bottom: 12%;
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
   #gallery-albums .album-list .album-item {
     display: flex;
     flex-direction: column;
@@ -642,11 +712,17 @@ div.container__login-register .row .register__container .register__form input.bt
   width: 43vw;
   height: 43vw;
 }
+@media only screen and (min-width: 768px) {
+  #gallery-albums .album-list .album-item .album-image {
+    width: 30vw;
+    height: 30vw;
+    align-self: center;
+  }
+}
 @media only screen and (min-width: 1200px) {
   #gallery-albums .album-list .album-item .album-image {
     width: 16vw;
     height: 16vw;
-    align-self: center;
   }
 }
 #gallery-albums .album-list .album-item .album-image img {
@@ -661,6 +737,11 @@ div.container__login-register .row .register__container .register__form input.bt
   white-space: nowrap;
   text-overflow: ellipsis;
   margin-bottom: 12%;
+}
+@media only screen and (min-width: 768px) {
+  #gallery-albums .album-list .album-item .album-name p {
+    margin-bottom: 5%;
+  }
 }
 @media only screen and (min-width: 1200px) {
   #gallery-albums .album-list .album-item .album-name p {
@@ -681,6 +762,11 @@ div.container__login-register .row .register__container .register__form input.bt
   display: flex;
   justify-content: space-around;
 }
+@media only screen and (min-width: 768px) {
+  #gallery-albums .album-list .album-item .album-name .buttons {
+    margin: 0 10%;
+  }
+}
 @media only screen and (min-width: 1200px) {
   #gallery-albums .album-list .album-item .album-name .buttons {
     margin: 10% 10% 0 10%;
@@ -696,6 +782,11 @@ div.container__login-register .row .register__container .register__form input.bt
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
+}
+@media only screen and (min-width: 768px) {
+  #gallery-albums .album-list .album-item .album-name .seguro-album {
+    margin-top: -24%;
+  }
 }
 @media only screen and (min-width: 1200px) {
   #gallery-albums .album-list .album-item .album-name .seguro-album {
@@ -779,12 +870,17 @@ ul.artist-list .artist-item {
   text-align: center;
   margin-bottom: 12%;
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
   ul.artist-list .artist-item {
-    width: 100%;
-    margin-bottom: 0;
     display: flex;
     flex-direction: column;
+    margin-bottom: 3%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  ul.artist-list .artist-item {
+    margin-bottom: 0;
+    width: 100%;
   }
 }
 ul.artist-list .artist-item .artist-image {
@@ -794,11 +890,17 @@ ul.artist-list .artist-item .artist-image {
   width: 43vw;
   height: 43vw;
 }
+@media only screen and (min-width: 768px) {
+  ul.artist-list .artist-item .artist-image {
+    width: 30vw;
+    height: 30vw;
+    align-self: center;
+  }
+}
 @media only screen and (min-width: 1200px) {
   ul.artist-list .artist-item .artist-image {
     width: 20vw;
     height: 20vw;
-    align-self: center;
   }
 }
 ul.artist-list .artist-item .artist-image img {
@@ -826,6 +928,11 @@ ul.artist-list .artist-item .artist-name .buttons {
   display: flex;
   justify-content: space-around;
 }
+@media only screen and (min-width: 768px) {
+  ul.artist-list .artist-item .artist-name .buttons {
+    margin: 10% 12% 0 12%;
+  }
+}
 @media only screen and (min-width: 1200px) {
   ul.artist-list .artist-item .artist-name .buttons {
     margin: 15% 10% 0 10%;
@@ -838,10 +945,17 @@ ul.artist-list .artist-item .artist-name .seguro-artist-card {
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
 }
+@media only screen and (min-width: 768px) {
+  ul.artist-list .artist-item .artist-name .seguro-artist-card {
+    margin-top: -22%;
+    padding: 8%;
+  }
+}
 @media only screen and (min-width: 1200px) {
   ul.artist-list .artist-item .artist-name .seguro-artist-card {
     margin: -30% 0 0 6%;
     width: 85%;
+    padding: 0;
   }
 }
 ul.artist-list .artist-item .artist-name .seguro-artist-card a {
@@ -907,6 +1021,7 @@ a:focus, a:hover {
   text-transform: uppercase;
   width: 100%;
   font-weight: 600;
+  color: #ffffff;
 }
 
 .form-control {
@@ -968,6 +1083,13 @@ div.home__main-container .home__container a.home__btn:active, div.home__main-con
   margin: 0;
   background-color: #000000;
 }
+@media only screen and (min-width: 768px) {
+  .player {
+    grid-template-columns: 15% 1fr;
+    width: 80%;
+    margin-left: 10%;
+  }
+}
 @media only screen and (min-width: 1200px) {
   .player {
     grid-template-columns: 20% 80%;
@@ -991,7 +1113,7 @@ div.home__main-container .home__container a.home__btn:active, div.home__main-con
   grid-row: 1/2;
   grid-column: 2/3;
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
   .player .audio-file {
     width: 100%;
   }
@@ -1010,7 +1132,7 @@ div.home__main-container .home__container a.home__btn:active, div.home__main-con
   grid-column: 2/3;
   height: 100%;
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
   .player .player-box {
     width: 100%;
   }
@@ -1108,12 +1230,11 @@ div.user-edit__container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 8%;
-  margin-bottom: 54%;
+  margin: 8% 0 54% 0;
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
   div.user-edit__container {
-    margin-bottom: 15%;
+    margin: 8% 0 15% 0;
   }
 }
 div.user-edit__container .user-edit__title {
@@ -1122,11 +1243,6 @@ div.user-edit__container .user-edit__title {
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 14%;
-}
-@media only screen and (min-width: 1200px) {
-  div.user-edit__container .user-edit__title {
-    margin: 0;
-  }
 }
 div.user-edit__container form {
   margin: 5%;
@@ -1163,6 +1279,7 @@ div.user-edit__container form .image_for_edit {
   width: 16vw;
   height: 16vw;
   object-fit: cover;
+  margin-top: 4%;
 }
 @media only screen and (min-width: 1200px) {
   div.user-edit__container form .image_for_edit {
@@ -1191,6 +1308,11 @@ div.user-edit__container form .user-edit__btn-submit {
   margin-top: 9%;
   color: #000000ad;
   padding: 1.1em;
+}
+@media only screen and (min-width: 768px) {
+  div.user-edit__container form .user-edit__btn-submit {
+    margin-top: 4%;
+  }
 }
 @media only screen and (min-width: 1200px) {
   div.user-edit__container form .user-edit__btn-submit {

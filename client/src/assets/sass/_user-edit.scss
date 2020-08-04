@@ -2,11 +2,10 @@ div.user-edit__container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 8%;
-    margin-bottom: 54%;
+    margin: 8% 0 54% 0;
 
-    @media only screen and (min-width: 1200px){
-        margin-bottom: 15%;
+    @media only screen and (min-width: 768px){
+        margin: 8% 0 15% 0;
     }
 
     .user-edit__title{
@@ -15,10 +14,6 @@ div.user-edit__container{
         font-weight: 600;
         color: #ffffff;
         margin-bottom: 14%;
-
-        @media only screen and (min-width: 1200px){
-            margin: 0;
-        }
     }
     form{
         margin: 5%;
@@ -53,6 +48,7 @@ div.user-edit__container{
             width: 16vw;
             height: 16vw;
             object-fit: cover;
+            margin-top: 4%;
 
             @media only screen and (min-width: 1200px){
                 width: 10vw;
@@ -82,6 +78,9 @@ div.user-edit__container{
             color: #000000ad;
             padding: 1.1em;
 
+            @media only screen and (min-width: 768px){
+                margin-top: 4%;
+            }
             @media only screen and (min-width: 1200px){
                 margin-top: 2%;
             }

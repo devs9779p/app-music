@@ -3,8 +3,10 @@
     margin-bottom: 50%;
     margin-top: 8%;
 
+    @media only screen and (min-width: 768px){
+        margin-bottom: 15%;               
+    }
     @media only screen and (min-width: 1200px){
-        margin-bottom: 15%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -54,19 +56,22 @@
                 color: #db2525; 
             }
         } 
-        div .artist-add__add-img-title{
-            text-align: center;
-            width: 100%;
-            input{
-                font-size: 1.1rem;
-                width: 100%;
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .artist_image_for_edit{
+                object-fit: cover;
+                width: 10vw;
+                height: 10vw;
+                margin-top: 4%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
             }
-        }
-        div .artist_image_for_edit{
-            text-align: center;
-            img{
-                width: 50px;
-                height: 50px;
+            p{
+                margin-top: 5%;
             }
         }
         .artist__btn-submit{
@@ -78,7 +83,7 @@
             color: #000000ad;
             padding: 1.2em;
 
-            @media only screen and (min-width: 1200px){
+            @media only screen and (min-width: 768px){
                 margin-top: 4%;
             }
         }

@@ -8,7 +8,7 @@
       </div>
     </div>
   
-   <form #userUpdateForm="ngForm" (submit)="onSubmit()" class="col-xs-12 col-md-8">
+   <form #userUpdateForm="ngForm" (submit)="onSubmit()" class="col-xs-12">
       <p>
         <label>Nombre:</label>
         <input type="text" #name="ngModel" name="name" [(ngModel)]="user.name" class="form-control" required>
